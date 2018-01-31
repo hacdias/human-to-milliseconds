@@ -6,7 +6,7 @@ const toMilliseconds = require('../src/index')
 
 function makeTest (input, output) {
   it(input, (done) => {
-    humanToMilliseconds(input, (err, val) => {
+    toMilliseconds(input, (err, val) => {
       expect(err).to.eql(null)
       expect(val).to.eql(output)
       done()
