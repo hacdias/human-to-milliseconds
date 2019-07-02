@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/hacdias/human-to-milliseconds#readme",
   "devDependencies": {
-    "aegir": "^12.3.0",
-    "chai": "^4.1.2",
+    "aegir": "^19.0.4",
+    "chai": "^4.2.0",
     "pre-commit": "^1.2.2"
   },
   "scripts": {
@@ -37,9 +37,6 @@
   "pre-commit": [
     "lint"
   ],
-  "dependencies": {
-    "promisify-es6": "^1.0.3"
-  },
   "contributors": [
     "Henrique Dias <hacdias@gmail.com>"
   ]

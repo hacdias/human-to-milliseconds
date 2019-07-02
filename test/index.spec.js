@@ -6,17 +6,8 @@ const toMilliseconds = require('../src/index')
 
 function makeTest (input, output) {
   it(input, (done) => {
-    toMilliseconds(input, (err, val) => {
-      expect(err).to.eql(null)
-      expect(val).to.eql(output)
-      done()
-    })
-  })
-
-  it(input + ' Promise', () => {
-    return toMilliseconds(input).then((val) => {
-      expect(val).to.eql(output)
-    })
+    expect(toMilliseconds(input)).to.eql(output)
+    done()
   })
 }
 

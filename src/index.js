@@ -1,7 +1,5 @@
 'use strict'
 
-const promisify = require('promisify-es6')
-
 const whole = /^((\d+(\.\d+)*)(ns|ms|us|µs|m|s|h))+$/
 const pieces = /((\d+(\.\d+)*)(ns|ms|us|µs|m|s|h))/g
 const measure = /(ns|ms|us|µs|m|s|h)/g
@@ -23,16 +21,16 @@ function analyse (time) {
   return parseFloat(time) * multipliers[unit]
 }
 
-module.exports = promisify(function (time, callback) {
+module.exports = function (time, callback) {
   if (typeof time !== 'string') {
-    return callback(new Error('the first argument must be a string'))
+    throw new Error('the first argument must be a string')
   }
 
   if (!whole.test(time)) {
-    return callback(new Error('invalid time'))
+    throw new Error('invalid time')
   }
 
-  callback(null, time.match(pieces).reduce((sum, currentVal) => {
+  return time.match(pieces).reduce((sum, currentVal) => {
     return sum + analyse(currentVal)
-  }, 0))
-})
+  }, 0)
+}
