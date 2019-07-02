@@ -21,7 +21,7 @@ function analyse (time) {
   return parseFloat(time) * multipliers[unit]
 }
 
-module.exports = function (time, callback) {
+module.exports = function (time) {
   if (typeof time !== 'string') {
     throw new Error('the first argument must be a string')
   }

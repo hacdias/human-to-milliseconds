@@ -34,14 +34,10 @@ Loading this module through a script tag will make the ```HumanToMilliseconds```
 ## API
 
 ```js
-HumanToMilliseconds('1h50m', (err, value) => {
-  console.log(val)
-})
-
-// or ...
-
-HumanToMilliseconds('1h50m')
-  .then(val => { console.log(val) })
-  .catch(err => { console.log(err) })
+try {
+  console.log(HumanToMilliseconds('1h50m'))
+} catch (err) {
+  console.log(err)
+}
 ```
 
